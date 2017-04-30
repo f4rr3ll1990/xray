@@ -1,0 +1,9 @@
+/* Mediante este estilo se resta el alto de la barra de herramientas
+   al 100% de la altura de la pantalla. Si se comentarea el estilo
+   se moverá todo el contenido (lista y barra de herramientas)
+*/
+.full-heigth {
+    height: -moz-calc(100% - 64px); 
+    height: -webkit-calc(100% - 64px); 
+    height: calc(100% - 64px);
+}

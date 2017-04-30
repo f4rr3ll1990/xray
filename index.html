@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>X-Ray</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <!-- Si se utiliza <div></div> no funciona correctamente el estilo -->
+<!-- por eso el uso de <span></span> -->
+<span ng-app="app" ng-controller="XrayCtrl">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            X-Ray
+        </div>
+    </md-toolbar>
+<form class="form" role="form" ng-submit="addMessage(Sity, Clinic); Sity = '';Clinic = ''">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="Sity" placeholder="Введите город" />
+            <input type="text" class="form-control" ng-model="Clinic" placeholder="Больница" />
+            <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Добавить запись</button>
+                  </span>
+        </div>
+    </div>
+</form>
+    <!-- Descomentariar esta linea y comentariar la siguiente para World War Z -->
+    <!-- <md-content> -->
+    <md-content class="full-heigth">
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="item in messages">
+                <div class="md-list-item-text">
+                    <h3>{{item.Sity}}</h3>
+                    <h4>{{item.Clinic}}</h4>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</span>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+      <script src='http://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+
+    <script src='http://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-aria.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
